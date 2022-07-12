@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="createBook()">
+    <div class="mb-3">
+      <label htmlFor = "title" class="form-label text-start" >Titulo: </label>
+      <input class="form-control" formControlName="title"/>
+    </div>
+    <div class="mb-3"> 
+      <label htmlFor = "author" class="form-label">Autor: </label>
+      <input class="form-control" formControlName="author"/>
+    </div>
+    <div class="mb-3">
+      <label htmlFor = "description" class="form-label">Descripción: </label>
+      <input class="form-control" formControlName="description"/>
+    </div>
+    <div class="mb-3">
+      <label htmlFor = "subject" class="form-label">Tema: </label>
+      <input class="form-control" formControlName="subject"/>
+    </div>
+    <div class="mb-3">
+      <label htmlFor = "year" class="form-label">Año de Publicación: </label>
+      <input type="number" class="form-control" formControlName="year"/>
+    </div>
+    <button type = "submit" class ="btn btn-primary mx-2">Enviar</button>
+  </form>
