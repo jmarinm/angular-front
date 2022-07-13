@@ -1,23 +1,26 @@
+
 <form [formGroup]="form" (ngSubmit)="createBook()">
-    <div class="mb-3">
-      <label htmlFor = "title" class="form-label text-start" >Titulo: </label>
-      <input class="form-control" formControlName="title"/>
-    </div>
-    <div class="mb-3"> 
-      <label htmlFor = "author" class="form-label">Autor: </label>
-      <input class="form-control" formControlName="author"/>
-    </div>
-    <div class="mb-3">
-      <label htmlFor = "description" class="form-label">Descripción: </label>
-      <input class="form-control" formControlName="description"/>
-    </div>
-    <div class="mb-3">
-      <label htmlFor = "subject" class="form-label">Tema: </label>
-      <input class="form-control" formControlName="subject"/>
-    </div>
-    <div class="mb-3">
-      <label htmlFor = "year" class="form-label">Año de Publicación: </label>
-      <input type="number" class="form-control" formControlName="year"/>
-    </div>
-    <button type = "submit" class ="btn btn-primary mx-2">Enviar</button>
-  </form>
+  <mat-form-field  appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput placeholder="Ingrese el id del libro" formControlName="title" />
+  </mat-form-field>
+
+  <mat-form-field  appearance="fill">
+    <mat-label>Autor: </mat-label>
+    <input matInput placeholder="Ingrese el id del libro" formControlName="author" />
+  </mat-form-field>
+  <mat-form-field  appearance="fill">
+    <mat-label>Descripción: </mat-label>
+    <input matInput placeholder="Ingrese el id del libro" formControlName="description" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Tema: </mat-label>
+    <input matInput placeholder="Ingrese el id del libro" formControlName="subject" />
+  </mat-form-field>
+  <mat-form-field  appearance="fill">
+    <mat-label>Año de Publicación: </mat-label>
+    <input matInput type="number" placeholder="Ingrese el id del libro" formControlName="year" />
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary" class="margin ">Enviar</button>
+</form>

@@ -1,53 +1,68 @@
 <div>
   <div>
-    <div class="text-center">
-      <header class="p-3 bg-dark text-white">
-        <h1 class="fw-light"> Libreria </h1>
-      </header>
-
+    <div align="center">
+      <mat-toolbar color="primary">
+        <h1>Libreria</h1>
+      </mat-toolbar>
     </div>
 
     <br />
     <br />
-    <div class="text-center">
-      <h2 class="fw-light">Obtener Todos</h2>
-      <button type="button" class="btn btn-primary mx-2" (click)="buscarLibros()">Buscar Todos los Libros</button>
-      <button type="button" class="btn btn-secondary" (click)="vaciarLibros()">Limpiar</button>
+    <div align="center">
+      <h2 class="title">Obtener Todos</h2>
+      <button mat-raised-button color="primary" class="margin" (click)="buscarLibros()">Buscar Todos los Libros</button>
+      <button mat-raised-button color="secondary" class="margin" (click)="vaciarLibros()">Limpiar</button>
 
-      <div class="row" *ngIf="books?.length >0">
-        <Book class="col" *ngFor="let b of books" [book]="b"></Book>
+      <div *ngIf="books?.length >0">
+        <mat-grid-list cols="4" rowHeight="2:1">
+          <mat-grid-tile *ngFor="let b of books">
+            <Book [book]="b"></Book>
+          </mat-grid-tile>
+        </mat-grid-list>
       </div>
       <br />
       <br />
       <br />
+
+
+
       <div align="center">
-        <h2 class="fw-light">Obtener Libro por Id</h2>
+        <h2 class="title">Obtener Libro por Id</h2>
         <form [formGroup]="form" (ngSubmit)="buscarLibro()">
-          <input placeholder="Ingrese el id del libro" class=" mx-2 input-group-text mb-3" formControlName="bookId" />
-          <button type="submit" class="btn btn-primary mx-2">Buscar</button>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ID del libro a buscar</mat-label>
+            <input matInput placeholder="Ingrese el id del libro" formControlName="bookId" />
+          </mat-form-field>
+          <button mat-raised-button color="primary" class="margin tst" type="submit" >Buscar</button>
         </form>
         <Book *ngIf="book" [book]="book[0]"></Book>
       </div>
-      <br />
-      <br />
 
-      <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4 p-3 border border-primary border-5">
-          <h2 class="fw-light" align="center">Crear Un Libro</h2>
+
+
+      <br />
+      <br />
+      
+      <div class="border">
+          <h2 class="title" align="center">Crear Un Libro</h2>
           <BookForm></BookForm>
-        </div>
       </div>
+
       <br />
       <br />
 
       <div class="mb-5" align="center">
-        <h3 class="fw-light">Libros por palabra clave</h3>
+        <h3 class="title">Libros por palabra clave</h3>
         <form [formGroup]="reportForm" (ngSubmit)="descargarReporte()">
-          <input placeholder="Ingrese la palabra clave" class="input-group-text mb-3" formControlName="keyword" />
-          <br/>
-          <button type="submit" class="btn btn-primary">Generar Reporte</button>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Palabra Clave a Buscar</mat-label>
+            <input matInput placeholder="Ingrese la palabra clave" formControlName="keyword" />
+          </mat-form-field>
+          <br />
+          <button mat-raised-button type="submit" color="primary">Generar Reporte</button>
         </form>
+        <br />
+        <br/>
         <br/>
 
       </div>

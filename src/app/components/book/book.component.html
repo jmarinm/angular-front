@@ -1,7 +1,8 @@
-<div class="card mx-4 my-2" style="width: '18rem'">
-    <div class="card-body">
-        <h5 class="card-title">{{book.Title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{book.PublicationYear}}</h6>
-        <p class="card-text">{{book.Description}}</p>
-    </div>
-</div>
+<mat-card class="mat-card card">
+    <mat-card-title>{{book.Title}}</mat-card-title>
+    <mat-card-subtitle>{{book.Author}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>{{book.PublicationYear}}</p>
+        <p>{{book.Description}}</p>
+    </mat-card-content>
+</mat-card>
